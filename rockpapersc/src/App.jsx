@@ -5,9 +5,15 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  const choices = ["rock", "paper", "scissors"];
 
   function check() {
-    console.log("aaa");
+    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+    const randomChoice1 = choices[Math.floor(Math.random() * choices.length)];
+
+    if (randomChoice === randomChoice1) {
+      console.log("It's a tie!");
+    }
   }
 
   return (
