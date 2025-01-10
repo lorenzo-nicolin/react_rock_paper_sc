@@ -8,11 +8,25 @@ function App() {
   const choices = ["rock", "paper", "scissors"];
 
   function check() {
+    console.log("run check...");
+
     const randomChoice = choices[Math.floor(Math.random() * choices.length)];
     const randomChoice1 = choices[Math.floor(Math.random() * choices.length)];
 
+    console.log(randomChoice);
+    console.log(randomChoice1);
+
+    // Determine the winner
     if (randomChoice === randomChoice1) {
       console.log("It's a tie!");
+    } else if (
+      (randomChoice === "rock" && randomChoice1 === "scissors") ||
+      (randomChoice === "scissors" && randomChoice1 === "paper") ||
+      (randomChoice === "paper" && randomChoice1 === "rock")
+    ) {
+      console.log("Player 1 wins!");
+    } else {
+      console.log("Player 2 wins!");
     }
   }
 
